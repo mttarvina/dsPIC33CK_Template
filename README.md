@@ -1,6 +1,6 @@
-Title:      dsPIC33CK Template
-Author:     Tarvs' Hobbytronics
-Contact:    mttarvina@gmail.com
+# Title:      dsPIC33CK Template
+# Author:     Tarvs' Hobbytronics
+# Contact:    mttarvina@gmail.com
 ************************************************************************************************
 Description:
 - This is a template project that will serve as a base to any projects centered around the dsPIC33CK as a micrcontroller.
