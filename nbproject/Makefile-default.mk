@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c dspic33_sys.c dspic33_time.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c dspic33ck_lib_mttarvina/dspic33ck_analog.c dspic33ck_lib_mttarvina/dspic33ck_core.c dspic33ck_lib_mttarvina/dspic33ck_pwm.c dspic33ck_lib_mttarvina/dspic33ck_time.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/dspic33_sys.o ${OBJECTDIR}/dspic33_time.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/dspic33_sys.o.d ${OBJECTDIR}/dspic33_time.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o.d ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o.d ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o.d ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/dspic33_sys.o ${OBJECTDIR}/dspic33_time.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o
 
 # Source Files
-SOURCEFILES=main.c dspic33_sys.c dspic33_time.c
+SOURCEFILES=main.c dspic33ck_lib_mttarvina/dspic33ck_analog.c dspic33ck_lib_mttarvina/dspic33ck_core.c dspic33ck_lib_mttarvina/dspic33ck_pwm.c dspic33ck_lib_mttarvina/dspic33ck_time.c
 
 
 
@@ -101,17 +101,29 @@ ${OBJECTDIR}/main.o: main.c  .generated_files/2b44db0551cb9e9491d8d8f2b037c1aafd
 	@${RM} ${OBJECTDIR}/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/dspic33_sys.o: dspic33_sys.c  .generated_files/b1f4d0489f58a937f91b1008a3ed9ae6988384bb.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/dspic33_sys.o.d 
-	@${RM} ${OBJECTDIR}/dspic33_sys.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33_sys.c  -o ${OBJECTDIR}/dspic33_sys.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33_sys.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o: dspic33ck_lib_mttarvina/dspic33ck_analog.c  .generated_files/87ab99a97ad2e11d86e11672c1d51f0704e338a2.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
+	@${MKDIR} "${OBJECTDIR}/dspic33ck_lib_mttarvina" 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o.d 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33ck_lib_mttarvina/dspic33ck_analog.c  -o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/dspic33_time.o: dspic33_time.c  .generated_files/48a76eec5805a5da2ccf709b114fbb08ec1eaafd.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/dspic33_time.o.d 
-	@${RM} ${OBJECTDIR}/dspic33_time.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33_time.c  -o ${OBJECTDIR}/dspic33_time.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33_time.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o: dspic33ck_lib_mttarvina/dspic33ck_core.c  .generated_files/99258b3239691366c426f4739750be9511d34edd.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
+	@${MKDIR} "${OBJECTDIR}/dspic33ck_lib_mttarvina" 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o.d 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33ck_lib_mttarvina/dspic33ck_core.c  -o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o: dspic33ck_lib_mttarvina/dspic33ck_pwm.c  .generated_files/ebd06ebbb9b213ae61783b12afdc7a8d0e503f86.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
+	@${MKDIR} "${OBJECTDIR}/dspic33ck_lib_mttarvina" 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o.d 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33ck_lib_mttarvina/dspic33ck_pwm.c  -o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o: dspic33ck_lib_mttarvina/dspic33ck_time.c  .generated_files/79396801e6cd9b636dbf24be58f7599304442c64.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
+	@${MKDIR} "${OBJECTDIR}/dspic33ck_lib_mttarvina" 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o.d 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33ck_lib_mttarvina/dspic33ck_time.c  -o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/c05369c8531103dc0f9e0a2ede97a10dadb8dfb1.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
@@ -120,17 +132,29 @@ ${OBJECTDIR}/main.o: main.c  .generated_files/c05369c8531103dc0f9e0a2ede97a10dad
 	@${RM} ${OBJECTDIR}/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/dspic33_sys.o: dspic33_sys.c  .generated_files/3cb940e78d9c3e77e16807c892b5303fb221b5c4.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/dspic33_sys.o.d 
-	@${RM} ${OBJECTDIR}/dspic33_sys.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33_sys.c  -o ${OBJECTDIR}/dspic33_sys.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33_sys.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o: dspic33ck_lib_mttarvina/dspic33ck_analog.c  .generated_files/554bfe9fb26826a5ef3478c63cb69c98aff33b97.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
+	@${MKDIR} "${OBJECTDIR}/dspic33ck_lib_mttarvina" 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o.d 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33ck_lib_mttarvina/dspic33ck_analog.c  -o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_analog.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
-${OBJECTDIR}/dspic33_time.o: dspic33_time.c  .generated_files/f5ecda45d948c392695c7e7d06a15b9287fa76b9.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/dspic33_time.o.d 
-	@${RM} ${OBJECTDIR}/dspic33_time.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33_time.c  -o ${OBJECTDIR}/dspic33_time.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33_time.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o: dspic33ck_lib_mttarvina/dspic33ck_core.c  .generated_files/bd11e5934acc2fdf6d458185ac83dd9a68e0afe7.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
+	@${MKDIR} "${OBJECTDIR}/dspic33ck_lib_mttarvina" 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o.d 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33ck_lib_mttarvina/dspic33ck_core.c  -o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_core.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o: dspic33ck_lib_mttarvina/dspic33ck_pwm.c  .generated_files/f4d10632c8be9042ac8e7d90612e299c9476f137.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
+	@${MKDIR} "${OBJECTDIR}/dspic33ck_lib_mttarvina" 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o.d 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33ck_lib_mttarvina/dspic33ck_pwm.c  -o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_pwm.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o: dspic33ck_lib_mttarvina/dspic33ck_time.c  .generated_files/4a27da026b8625d83f6ef75f660d4af2e576cef5.flag .generated_files/e160cb13e7b8970c0c48e563e453e0308e9d31e4.flag
+	@${MKDIR} "${OBJECTDIR}/dspic33ck_lib_mttarvina" 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o.d 
+	@${RM} ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  dspic33ck_lib_mttarvina/dspic33ck_time.c  -o ${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/dspic33ck_lib_mttarvina/dspic33ck_time.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

@@ -1,42 +1,37 @@
 /* 
- * File:            TemplateProject/dspic33_time.h
+ * File:            dspic33ck_time.h
  * Device:          dsPIC33CK256MP202
  * Author:          Tarvs' Hobbytronics (mttarvina), email: mttarvina@gmail.com
- * Description:     This is a custom config header file for timing related routines
- * 
- * Revision history:
- *      11/07/2020  --> reverted to delay_5us() to reduce jitter and error
- *      ************************************************************************
- *      11/04/2020  --> added SCCP1 timer routines based on MCC generated code
- *                  --> added milliseconds() and seconds() function definitions
- *                  --> delay_5us() changed to delay_us()
- *                  --> TIMER1 here is at 1us resolution with constant 1.2us error
- *                  --> This 1.2us error is totally insignificant when duration > 100us
- *      ************************************************************************
- *      11/02/2020  --> added delay_5us() function definition
- *                  --> TIMER1 here is at 5us resolution
- *      ************************************************************************
- *      11/01/2020  --> Initial creation based on TIMER1 MCC generated code
- *                  --> simplified for basic functional use
- *                  --> timer1 is set for 1ms resolution
- *                  --> added custom delay_ms() function definition
+ * Description:     This is a custom header file for timing/delay related routines
  */
 
-#ifndef _DSPIC33_TIME_H
-#define _DSPIC33_TIME_H
+#ifndef _DSPIC33CK_TIME_H
+#define _DSPIC33CK_TIME_H
 
 
 #include <xc.h>
-#include <stdint.h>
-#include <stdbool.h>
+#include "dspic33ck_core.h"
 
 
 #define TMR1_INTERRUPT_TICKER_FACTOR    1
-#define COUNT_LIMIT                     0x00C7                                  // 199
+
+
+typedef struct _TMR_OBJ_STRUCT {
+    volatile uint16_t       count;
+    volatile uint16_t       count_by_10;
+} TMR_OBJ;
+
+
+typedef struct _SCCP1_TMR_OBJ_STRUCT {
+    volatile uint16_t                   count_buf;
+    volatile unsigned long long int     count;
+    volatile unsigned long long int     count_by_1k;
+} SCCP1_TMR_OBJ;
 
 
 // *****************************************************************************
 // TIMER1 Function Call Definitions
+// TIMER1 timer period = 5us
 // *****************************************************************************
 
 /**
@@ -49,7 +44,7 @@
   @Returns
     None
 */
-void TIMER1_Initialize (void);
+void TIMER1_Initialize( void );
 
 /**
   @Description
@@ -98,23 +93,12 @@ void TIMER1_CountReset( void );
   @Returns
     None
 */
-void delay_ms(uint16_t duration);
-
-/**
-  @Description
-    Uses TIMER1. Delay for specified duration in 5us resolution
-
-  @Param
-    uint8_t duration - duration * 5us
-
-  @Returns
-    None
-*/
-void delay_5us(uint8_t duration);
+void delay_ms( uint16_t _duration );
 
 
 // *****************************************************************************
 // SCCP1 Function Call Definitions
+// SCCP2 timer period = 1ms
 // *****************************************************************************
 
 /**
@@ -155,6 +139,17 @@ void SCCP1_Stop( void );
 
 /**
   @Description
+    Reset counter parameters of SCCP1
+
+  @Param
+    None.
+
+  @Returns
+    None
+*/
+void SCCP1_CountReset( void );
+/**
+  @Description
     Returns elapsed time in milliseconds 
 
   @Param
@@ -163,7 +158,7 @@ void SCCP1_Stop( void );
   @Returns
     unsigned long long int
 */
-int milliseconds (void);
+unsigned long long milliseconds( void );
 
 /**
   @Description
@@ -175,7 +170,6 @@ int milliseconds (void);
   @Returns
     unsigned long long int
 */
-int seconds (void);
-        
+unsigned long long seconds( void );     
 
 #endif

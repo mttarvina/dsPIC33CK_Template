@@ -7,7 +7,7 @@ Command:
   -p33CK256MP202 \
   --mdfp=C:/Users/mttar/.mchp_packs/Microchip/dsPIC33CK-MP_DFP/1.5.135/xc16 \
   -o \
-  dist/default/production/TemplateProject.X.production.elf \
+  dist/default/production/dsPIC33CK_Template.X.production.elf \
   -Lc:/program files/microchip/xc16/v1.60/bin/bin/.. \
   -LC:/Users/mttar/.mchp_packs/Microchip/dsPIC33CK-MP_DFP/1.5.135/xc16/bin/../support/dsPIC33C/gld \
   -Lc:/program files/microchip/xc16/v1.60/bin/bin/../../lib \
@@ -19,8 +19,10 @@ Command:
   -Lc:/program files/microchip/xc16/v1.60/bin/bin/../../support/dsPIC33E/gld \
   -Lc:/program files/microchip/xc16/v1.60/bin/bin/../../support/dsPIC33F/gld \
   build/default/production/main.o \
-  build/default/production/dspic33_sys.o \
-  build/default/production/dspic33_time.o \
+  build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o \
+  build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o \
+  build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o \
+  build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   -Tp33CK256MP202.gld.00 \
@@ -35,7 +37,7 @@ Command:
   --stackguard=16 \
   --no-force-link \
   --smart-io \
-  -Map=dist/default/production/TemplateProject.X.production.map \
+  -Map=dist/default/production/dsPIC33CK_Template.X.production.map \
   --report-mem \
   --memorysummary \
   dist/default/production/memoryfile.xml \
@@ -55,6 +57,22 @@ c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(data
                               c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedch.o) (__data_init_extended)
 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalch.Leo)
                               (__crt_start_mode_normal)
+c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(fixsfsi.cheo)
+                              build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o (_(float, int, long long, short, float, short, int))
+c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(floatunsisf.cheo)
+                              build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o (___floatunsisf)
+c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(funpack.cheo)
+                              c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(fixsfsi.cheo) (__funpack)
+c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(mulsf3.cheo)
+                              build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o (___mulsf3)
+c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(floatundisf.cheo)
+                              c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(floatunsisf.cheo) (___floatundisf)
+c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(fpack.cheo)
+                              c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(mulsf3.cheo) (__fpack)
+c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(funpack2.cheo)
+                              c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(mulsf3.cheo) (__funpack2)
+c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(futil.cheo)
+                              c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(mulsf3.cheo) (__fPropagateNaN)
 
 
 Selected CodeGuard Options:
@@ -88,21 +106,21 @@ Default Scalar Model: Small
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200               0x178           0x234  (564)
-.text                        0x378               0x25a           0x387  (903)
-.dinit                       0x5d2                0x14            0x1e  (30)
+.text                        0x200               0x4f4           0x76e  (1902)
+.text                        0x6f4              0x129c          0x1bea  (7146)
+.dinit                      0x1990                0x26            0x39  (57)
 
-                 Total "program" memory used (bytes):          0x5d9  (1497) <1%
+                 Total "program" memory used (bytes):         0x2391  (9105) 3%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x6000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                       0x1000                   0            0x14  (20)
-.bss                        0x1014                   0            0x12  (18)
+.nbss                       0x1000                   0            0x12  (18)
+.bss                        0x1012                   0            0x1e  (30)
 
-                 Total "data" memory used (bytes):           0x26  (38) <1%
+                 Total "data" memory used (bytes):           0x30  (48) <1%
 
 
 Dynamic Memory Usage
@@ -110,22 +128,24 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x1026                              0x5fda  (24538)
+stack                       0x1030                              0x5fd0  (24528)
 
-                 Maximum dynamic memory (bytes):         0x5fda  (24538)
+                 Maximum dynamic memory (bytes):         0x5fd0  (24528)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
 
 External Symbols in Data Memory (by address):
 
-                    0x1000                  _time_stamp1
-                    0x1008                  _time_stamp2
+                    0x1000                  _data
+                    0x1002                  _time_stamp
+                    0x1024                  _pwma
 
 External Symbols in Data Memory (by name):
 
-                    0x1000                  _time_stamp1
-                    0x1008                  _time_stamp2
+                    0x1000                  _data
+                    0x1024                  _pwma
+                    0x1002                  _time_stamp
 
 External Symbols in Program Memory (by address):
 
@@ -133,51 +153,141 @@ External Symbols in Program Memory (by address):
                   0x00023c                  __psv_init
                   0x000248                  __data_init_extended
                   0x000248                  __data_init
-                  0x0002fa                  __T1Interrupt
-                  0x000314                  __CCT1Interrupt
-                  0x000372                  __DefaultInterrupt
-                  0x000378                  _TIMER1_Initialize
-                  0x000398                  _TIMER1_Start
-                  0x0003a4                  _TIMER1_Stop
-                  0x0003ae                  _TIMER1_CountReset
-                  0x0003b8                  _delay_ms
-                  0x0003dc                  _delay_5us
-                  0x0003f0                  _SCCP1_Initialize
-                  0x000432                  _SCCP1_Start
-                  0x000452                  _SCCP1_Stop
-                  0x00045a                  _milliseconds
-                  0x000468                  _seconds
-                  0x000476                  _main
-                  0x000534                  _SYS_INIT
-                  0x000544                  _GPIO_Initialize
-                  0x000566                  _SYSCLOCK_Initialize
+                  0x0002fa                  __CCT2Interrupt
+                  0x00045a                  __CCP3Interrupt
+                  0x00048e                  __CCT3Interrupt
+                  0x0004c4                  __T1Interrupt
+                  0x0004de                  __CCT1Interrupt
+                  0x00053c                  __DefaultInterrupt
+                  0x000542                  ___fixsfsi
+                  0x000584                  ___floatunsisf
+                  0x000588                  __funpack
+                  0x0005b2                  ___mulsf3
+                  0x00061a                  ___floatundisf
+                  0x000678                  __fpack
+                  0x0006c4                  __funpack2
+                  0x0006d4                  __fPropagateNaN
+                  0x0006e6                  __fbopExit
+                  0x0006ee                  __fbopReturnNaN
+                  0x000704                  _SCCP2_Initialize
+                  0x00073e                  _SCCP2_Start
+                  0x000750                  _SCCP2_Stop
+                  0x000758                  _SCCP2_SetSamplingPeriod
+                  0x000770                  _SCCP2_Triggered
+                  0x000784                  _ADC1_Initialize
+                  0x0007f2                  _ADC1_Core0PowerEnable
+                  0x000808                  _ADC1_Core0PowerDisable
+                  0x000812                  _ADC1_Core1PowerEnable
+                  0x000828                  _ADC1_Core1PowerDisable
+                  0x000832                  _ADC1_SharedCorePowerEnable
+                  0x000848                  _ADC1_SharedCorePowerDisable
+                  0x000852                  _ADC1_GetConversionResult
+                  0x0008cc                  _ADC1_IsConversionComplete
+                  0x000a06                  _ADC1_SetChannelInterrupt
+                  0x000b3c                  _Analog_SetPin
+                  0x000d18                  _ADC1_Read
+                  0x000fc6                  _CMP1_Initialize
+                  0x000fec                  _CMP1_Enable
+                  0x000ff4                  _CMP1_Disable
+                  0x000ffc                  _DAC_SetValue
+                  0x001008                  _CMP1_EnableDACOutput
+                  0x001010                  _CMP1_DisableDACOutput
+                  0x001018                  _DAC_Enable
+                  0x001024                  _SYS_INIT
+                  0x001034                  _SYSCLOCK_Initialize
+                  0x0010a0                  _GPIO_Initialize
+                  0x0010c6                  _Digital_SetPin
+                  0x001352                  _Digital_DrvPin
+                  0x001512                  _Digital_ReadPin
+                  0x001702                  _PWMx_GetPinRegister
+                  0x0017a2                  _PWMA_Attach
+                  0x00182a                  _PWMA_Start
+                  0x001832                  _PWMA_Stop
+                  0x00183a                  _PWMA_SetDuty
+                  0x001862                  _TIMER1_Initialize
+                  0x00187e                  _TIMER1_Start
+                  0x00188c                  _TIMER1_Stop
+                  0x001896                  _TIMER1_CountReset
+                  0x0018a0                  _delay_ms
+                  0x0018c0                  _SCCP1_Initialize
+                  0x0018fc                  _SCCP1_Start
+                  0x00190e                  _SCCP1_Stop
+                  0x001916                  _SCCP1_CountReset
+                  0x001934                  _milliseconds
+                  0x001940                  _seconds
+                  0x00194c                  _main
                   0x02bf00                  __FSEC.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x000544                  _GPIO_Initialize
-                  0x0003f0                  _SCCP1_Initialize
-                  0x000432                  _SCCP1_Start
-                  0x000452                  _SCCP1_Stop
-                  0x000566                  _SYSCLOCK_Initialize
-                  0x000534                  _SYS_INIT
-                  0x0003ae                  _TIMER1_CountReset
-                  0x000378                  _TIMER1_Initialize
-                  0x000398                  _TIMER1_Start
-                  0x0003a4                  _TIMER1_Stop
-                  0x000314                  __CCT1Interrupt
-                  0x000372                  __DefaultInterrupt
+                  0x000808                  _ADC1_Core0PowerDisable
+                  0x0007f2                  _ADC1_Core0PowerEnable
+                  0x000828                  _ADC1_Core1PowerDisable
+                  0x000812                  _ADC1_Core1PowerEnable
+                  0x000852                  _ADC1_GetConversionResult
+                  0x000784                  _ADC1_Initialize
+                  0x0008cc                  _ADC1_IsConversionComplete
+                  0x000d18                  _ADC1_Read
+                  0x000a06                  _ADC1_SetChannelInterrupt
+                  0x000848                  _ADC1_SharedCorePowerDisable
+                  0x000832                  _ADC1_SharedCorePowerEnable
+                  0x000b3c                  _Analog_SetPin
+                  0x000ff4                  _CMP1_Disable
+                  0x001010                  _CMP1_DisableDACOutput
+                  0x000fec                  _CMP1_Enable
+                  0x001008                  _CMP1_EnableDACOutput
+                  0x000fc6                  _CMP1_Initialize
+                  0x001018                  _DAC_Enable
+                  0x000ffc                  _DAC_SetValue
+                  0x001352                  _Digital_DrvPin
+                  0x001512                  _Digital_ReadPin
+                  0x0010c6                  _Digital_SetPin
+                  0x0010a0                  _GPIO_Initialize
+                  0x0017a2                  _PWMA_Attach
+                  0x00183a                  _PWMA_SetDuty
+                  0x00182a                  _PWMA_Start
+                  0x001832                  _PWMA_Stop
+                  0x001702                  _PWMx_GetPinRegister
+                  0x001916                  _SCCP1_CountReset
+                  0x0018c0                  _SCCP1_Initialize
+                  0x0018fc                  _SCCP1_Start
+                  0x00190e                  _SCCP1_Stop
+                  0x000704                  _SCCP2_Initialize
+                  0x000758                  _SCCP2_SetSamplingPeriod
+                  0x00073e                  _SCCP2_Start
+                  0x000750                  _SCCP2_Stop
+                  0x000770                  _SCCP2_Triggered
+                  0x001034                  _SYSCLOCK_Initialize
+                  0x001024                  _SYS_INIT
+                  0x001896                  _TIMER1_CountReset
+                  0x001862                  _TIMER1_Initialize
+                  0x00187e                  _TIMER1_Start
+                  0x00188c                  _TIMER1_Stop
+                  0x00045a                  __CCP3Interrupt
+                  0x0004de                  __CCT1Interrupt
+                  0x0002fa                  __CCT2Interrupt
+                  0x00048e                  __CCT3Interrupt
+                  0x00053c                  __DefaultInterrupt
                   0x02bf00                  __FSEC.sec
-                  0x0002fa                  __T1Interrupt
+                  0x0004c4                  __T1Interrupt
+                  0x000542                  ___fixsfsi
+                  0x00061a                  ___floatundisf
+                  0x000584                  ___floatunsisf
+                  0x0005b2                  ___mulsf3
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
+                  0x0006d4                  __fPropagateNaN
+                  0x0006e6                  __fbopExit
+                  0x0006ee                  __fbopReturnNaN
+                  0x000678                  __fpack
+                  0x000588                  __funpack
+                  0x0006c4                  __funpack2
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x0003dc                  _delay_5us
-                  0x0003b8                  _delay_ms
-                  0x000476                  _main
-                  0x00045a                  _milliseconds
-                  0x000468                  _seconds
+                  0x0018a0                  _delay_ms
+                  0x00194c                  _main
+                  0x001934                  _milliseconds
+                  0x001940                  _seconds
 
 Memory Configuration
 
@@ -208,8 +318,10 @@ FBTSEQ           0x02bffc           0x000002
 Linker script and memory map
 
 LOAD build/default/production/main.o
-LOAD build/default/production/dspic33_sys.o
-LOAD build/default/production/dspic33_time.o
+LOAD build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+LOAD build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+LOAD build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+LOAD build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD p33CK256MP202
 LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libfx-elf.a
@@ -245,7 +357,7 @@ LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libfx-elf.a
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200        0x178
+.text             0x000200        0x4f4
  *(.init)
  .init            0x000200         0x48 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedch.o)
                   0x000200                  __resetPRI
@@ -257,19 +369,62 @@ LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libfx-elf.a
  *(.user_init)
  *(.handle)
  *(.isr*)
- .isr.text        0x0002fa         0x78 build/default/production/dspic33_time.o
-                  0x0002fa                  __T1Interrupt
-                  0x000314                  __CCT1Interrupt
- .isr             0x000372          0x4 default_isr
-                  0x000372                  __DefaultInterrupt
+ .isr.text        0x0002fa        0x160 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+                  0x0002fa                  __CCT2Interrupt
+                  0x00030a                  __ADCAN0Interrupt
+                  0x000326                  __ADCAN1Interrupt
+                  0x000342                  __ADCAN2Interrupt
+                  0x00035e                  __ADCAN3Interrupt
+                  0x00037a                  __ADCAN4Interrupt
+                  0x000396                  __ADCAN5Interrupt
+                  0x0003b2                  __ADCAN6Interrupt
+                  0x0003ce                  __ADCAN7Interrupt
+                  0x0003ea                  __ADCAN8Interrupt
+                  0x000406                  __ADCAN9Interrupt
+                  0x000422                  __ADCAN10Interrupt
+                  0x00043e                  __ADCAN11Interrupt
+ .isr.text        0x00045a         0x6a build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+                  0x00045a                  __CCP3Interrupt
+                  0x00048e                  __CCT3Interrupt
+ .isr.text        0x0004c4         0x78 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
+                  0x0004c4                  __T1Interrupt
+                  0x0004de                  __CCT1Interrupt
+ .isr             0x00053c          0x4 default_isr
+                  0x00053c                  __DefaultInterrupt
  *(.libc)
  *(.libm)
  *(.libdsp)
  *(.lib*)
  .libpic30_crt_start_mode
-                  0x000376          0x2 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalch.Leo)
-                  0x000376                  __crt_start_mode
-                  0x000376                  __crt_start_mode_normal
+                  0x000540          0x2 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt_start_mode_normalch.Leo)
+                  0x000540                  __crt_start_mode
+                  0x000540                  __crt_start_mode_normal
+ .libm.fixsfsi    0x000542         0x42 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(fixsfsi.cheo)
+                  0x000542                  _(float, int, long long, short, float, short, int)
+ .libm.floatunsisf
+                  0x000584          0x4 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(floatunsisf.cheo)
+                  0x000584                  ___floatunsisf
+ .libm.funpack    0x000588         0x2a c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(funpack.cheo)
+                  0x000588                  __funpack
+ .libm.mulsf3     0x0005b2         0x68 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(mulsf3.cheo)
+                  0x0005b2                  ___mulsf3
+ .libm.floatundisf
+                  0x00061a         0x5e c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(floatundisf.cheo)
+                  0x00061a                  ___floatundisf
+ .libm.fpack      0x000678         0x4c c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(fpack.cheo)
+                  0x000678                  __fpack
+ .libm.funpack2
+                  0x0006c4         0x10 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(funpack2.cheo)
+                  0x0006c4                  __funpack2
+ .libm.fPropagateNaN
+                  0x0006d4         0x12 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(futil.cheo)
+                  0x0006d4                  __fPropagateNaN
+ .libm.fbobExit
+                  0x0006e6          0x8 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(futil.cheo)
+                  0x0006e6                  __fbopExit
+ .libm.fbopReturnNaN
+                  0x0006ee          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(futil.cheo)
+                  0x0006ee                  __fbopReturnNaN
 
 usercode
  *(usercode)
@@ -330,36 +485,46 @@ __FBTSEQ
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x1829
+.debug_info       0x000000       0x6800
  *(.debug_info)
- .debug_info      0x000000        0x333 build/default/production/main.o
- .debug_info      0x000333        0x780 build/default/production/dspic33_sys.o
- .debug_info      0x000ab3        0xd76 build/default/production/dspic33_time.o
+ .debug_info      0x000000        0x750 build/default/production/main.o
+ .debug_info      0x000750       0x2aa6 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+ .debug_info      0x0031f6       0x1502 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+ .debug_info      0x0046f8        0xf1e build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+ .debug_info      0x005616       0x11ea build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x2d3
+.debug_abbrev     0x000000        0x659
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0xbd build/default/production/main.o
- .debug_abbrev    0x0000bd         0xc5 build/default/production/dspic33_sys.o
- .debug_abbrev    0x000182        0x151 build/default/production/dspic33_time.o
+ .debug_abbrev    0x000000         0xc7 build/default/production/main.o
+ .debug_abbrev    0x0000c7        0x1e2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+ .debug_abbrev    0x0002a9        0x12a build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+ .debug_abbrev    0x0003d3        0x144 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+ .debug_abbrev    0x000517        0x142 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
 
-.debug_line       0x000000        0x399
+.debug_line       0x000000        0x96f
  *(.debug_line)
- .debug_line      0x000000        0x108 build/default/production/main.o
- .debug_line      0x000108        0x128 build/default/production/dspic33_sys.o
- .debug_line      0x000230        0x169 build/default/production/dspic33_time.o
+ .debug_line      0x000000        0x101 build/default/production/main.o
+ .debug_line      0x000101        0x363 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+ .debug_line      0x000464        0x1e4 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+ .debug_line      0x000648        0x18e build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+ .debug_line      0x0007d6        0x199 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
 
-.debug_frame      0x000000        0x22e
+.debug_frame      0x000000        0x7dc
  *(.debug_frame)
- .debug_frame     0x000000         0x38 build/default/production/main.o
- .debug_frame     0x000038         0x62 build/default/production/dspic33_sys.o
- .debug_frame     0x00009a        0x194 build/default/production/dspic33_time.o
+ .debug_frame     0x000000         0x2e build/default/production/main.o
+ .debug_frame     0x00002e        0x48c build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+ .debug_frame     0x0004ba         0xb0 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+ .debug_frame     0x00056a         0xde build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+ .debug_frame     0x000648        0x194 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
 
-.debug_str        0x000000        0x120
+.debug_str        0x000000        0x513
  *(.debug_str)
- .debug_str       0x000000         0x21 build/default/production/main.o
- .debug_str       0x000021         0x4e build/default/production/dspic33_sys.o
- .debug_str       0x00006f         0xb1 build/default/production/dspic33_time.o
+ .debug_str       0x000000         0x3d build/default/production/main.o
+ .debug_str       0x00003d        0x26e build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+ .debug_str       0x0002ab         0xd2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+ .debug_str       0x00037d         0xc6 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+ .debug_str       0x000443         0xd0 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
 
 .debug_loc
  *(.debug_loc)
@@ -368,26 +533,34 @@ __FBTSEQ
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x175
+                  0x000000        0x589
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x3b build/default/production/main.o
+                  0x000000         0x33 build/default/production/main.o
  .debug_pubnames
-                  0x00003b         0x4b build/default/production/dspic33_sys.o
+                  0x000033        0x344 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
  .debug_pubnames
-                  0x000086         0xef build/default/production/dspic33_time.o
+                  0x000377         0x85 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+ .debug_pubnames
+                  0x0003fc         0x97 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+ .debug_pubnames
+                  0x000493         0xf6 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
 
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000         0x48
+.debug_aranges    0x000000         0x78
  *(.debug_aranges)
  .debug_aranges
                   0x000000         0x18 build/default/production/main.o
  .debug_aranges
-                  0x000018         0x18 build/default/production/dspic33_sys.o
+                  0x000018         0x18 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
  .debug_aranges
-                  0x000030         0x18 build/default/production/dspic33_time.o
+                  0x000030         0x18 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+ .debug_aranges
+                  0x000048         0x18 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+ .debug_aranges
+                  0x000060         0x18 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -3247,133 +3420,270 @@ LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a
 LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
-OUTPUT(dist/default/production/TemplateProject.X.production.elf elf32-pic30)
+OUTPUT(dist/default/production/dsPIC33CK_Template.X.production.elf elf32-pic30)
 LOAD /CW/_FSEC
 LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000048        0x1d0
+                  0x000078        0x96f
  .debug_pubtypes
-                  0x000048         0x3c build/default/production/main.o
+                  0x000078         0xdb build/default/production/main.o
  .debug_pubtypes
-                  0x000084         0x6f build/default/production/dspic33_sys.o
+                  0x000153        0x345 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
  .debug_pubtypes
-                  0x0000f3        0x125 build/default/production/dspic33_time.o
+                  0x000498        0x206 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+ .debug_pubtypes
+                  0x00069e        0x185 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+ .debug_pubtypes
+                  0x000823        0x1c4 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
 
 __c30_signature
-                  0x000218         0x1e
+                  0x0009e7         0x5a
  __c30_signature
-                  0x000218          0x6 build/default/production/main.o
+                  0x0009e7          0x6 build/default/production/main.o
  __c30_signature
-                  0x00021e          0x6 build/default/production/dspic33_sys.o
+                  0x0009ed          0x6 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
  __c30_signature
-                  0x000224          0x6 build/default/production/dspic33_time.o
+                  0x0009f3          0x6 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
  __c30_signature
-                  0x00022a          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedch.o)
+                  0x0009f9          0x6 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
  __c30_signature
-                  0x000230          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extendedch.o)
+                  0x0009ff          0x6 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
+ __c30_signature
+                  0x000a05          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(crt0_extendedch.o)
+ __c30_signature
+                  0x000a0b          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(data_init_extendedch.o)
+ __c30_signature
+                  0x000a11          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(fixsfsi.cheo)
+ __c30_signature
+                  0x000a17          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(floatunsisf.cheo)
+ __c30_signature
+                  0x000a1d          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(funpack.cheo)
+ __c30_signature
+                  0x000a23          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(mulsf3.cheo)
+ __c30_signature
+                  0x000a29          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(floatundisf.cheo)
+ __c30_signature
+                  0x000a2f          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(fpack.cheo)
+ __c30_signature
+                  0x000a35          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(funpack2.cheo)
+ __c30_signature
+                  0x000a3b          0x6 c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a(futil.cheo)
 
-.nbss               0x1000         0x14
- .nbss              0x1000         0x10 build/default/production/main.o
-                    0x1000                  _time_stamp1
-                    0x1008                  _time_stamp2
- .nbss              0x1010          0x4 build/default/production/dspic33_time.o
+.nbss               0x1000         0x12
+ .nbss              0x1000          0xa build/default/production/main.o
+                    0x1000                  _data
+                    0x1002                  _time_stamp
+ .nbss              0x100a          0x4 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+ .nbss              0x100e          0x4 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
 
-.bss                0x1014         0x12
- .bss               0x1014         0x12 build/default/production/dspic33_time.o
+.bss                0x1012         0x1e
+ .bss               0x1012         0x12 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
+ .bss               0x1024          0xa build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+                    0x1024                  _pwma
+ .bss               0x102e          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._CCT2Interrupt
+                  0x000044          0x2
+ .ivt._CCT2Interrupt
+                  0x000044          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN0Interrupt
+                  0x0000ca          0x2
+ .ivt._ADCAN0Interrupt
+                  0x0000ca          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN1Interrupt
+                  0x0000cc          0x2
+ .ivt._ADCAN1Interrupt
+                  0x0000cc          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN2Interrupt
+                  0x0000ce          0x2
+ .ivt._ADCAN2Interrupt
+                  0x0000ce          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN3Interrupt
+                  0x0000d0          0x2
+ .ivt._ADCAN3Interrupt
+                  0x0000d0          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN4Interrupt
+                  0x0000d2          0x2
+ .ivt._ADCAN4Interrupt
+                  0x0000d2          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN5Interrupt
+                  0x0000d4          0x2
+ .ivt._ADCAN5Interrupt
+                  0x0000d4          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN6Interrupt
+                  0x0000d6          0x2
+ .ivt._ADCAN6Interrupt
+                  0x0000d6          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN7Interrupt
+                  0x0000d8          0x2
+ .ivt._ADCAN7Interrupt
+                  0x0000d8          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN8Interrupt
+                  0x0000da          0x2
+ .ivt._ADCAN8Interrupt
+                  0x0000da          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN9Interrupt
+                  0x0000dc          0x2
+ .ivt._ADCAN9Interrupt
+                  0x0000dc          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN10Interrupt
+                  0x0000de          0x2
+ .ivt._ADCAN10Interrupt
+                  0x0000de          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+
+.ivt._ADCAN11Interrupt
+                  0x0000e0          0x2
+ .ivt._ADCAN11Interrupt
+                  0x0000e0          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
 
 .config_BTMODE    0x801800          0x2
  .config_BTMODE
-                  0x801800          0x2 build/default/production/dspic33_sys.o
+                  0x801800          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_IBSEQ     0x02bffc          0x2
- .config_IBSEQ    0x02bffc          0x2 build/default/production/dspic33_sys.o
+ .config_IBSEQ    0x02bffc          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_CTXT4     0x02bf44          0x2
- .config_CTXT4    0x02bf44          0x2 build/default/production/dspic33_sys.o
+ .config_CTXT4    0x02bf44          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_SPI2PIN
                   0x02bf40          0x2
  .config_SPI2PIN
-                  0x02bf40          0x2 build/default/production/dspic33_sys.o
+                  0x02bf40          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_DMTDIS    0x02bf3c          0x2
  .config_DMTDIS
-                  0x02bf3c          0x2 build/default/production/dspic33_sys.o
+                  0x02bf3c          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_DMTCNTH
                   0x02bf38          0x2
  .config_DMTCNTH
-                  0x02bf38          0x2 build/default/production/dspic33_sys.o
+                  0x02bf38          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_DMTCNTL
                   0x02bf34          0x2
  .config_DMTCNTL
-                  0x02bf34          0x2 build/default/production/dspic33_sys.o
+                  0x02bf34          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_DMTIVTH
                   0x02bf30          0x2
  .config_DMTIVTH
-                  0x02bf30          0x2 build/default/production/dspic33_sys.o
+                  0x02bf30          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_DMTIVTL
                   0x02bf2c          0x2
  .config_DMTIVTL
-                  0x02bf2c          0x2 build/default/production/dspic33_sys.o
+                  0x02bf2c          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_NOBTSWP
                   0x02bf28          0x2
  .config_NOBTSWP
-                  0x02bf28          0x2 build/default/production/dspic33_sys.o
+                  0x02bf28          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_BISTDIS
                   0x02bf24          0x2
  .config_BISTDIS
-                  0x02bf24          0x2 build/default/production/dspic33_sys.o
+                  0x02bf24          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_FWDTEN    0x02bf20          0x2
  .config_FWDTEN
-                  0x02bf20          0x2 build/default/production/dspic33_sys.o
+                  0x02bf20          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_XTBST     0x02bf1c          0x2
- .config_XTBST    0x02bf1c          0x2 build/default/production/dspic33_sys.o
+ .config_XTBST    0x02bf1c          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_IESO      0x02bf18          0x2
- .config_IESO     0x02bf18          0x2 build/default/production/dspic33_sys.o
+ .config_IESO     0x02bf18          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
 
 .config_BSLIM     0x02bf10          0x2
- .config_BSLIM    0x02bf10          0x2 build/default/production/dspic33_sys.o
+ .config_BSLIM    0x02bf10          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+
+.ivt._CCP3Interrupt
+                  0x00005a          0x2
+ .ivt._CCP3Interrupt
+                  0x00005a          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+
+.ivt._CCT3Interrupt
+                  0x00005c          0x2
+ .ivt._CCT3Interrupt
+                  0x00005c          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
 
 .ivt._T1Interrupt
                   0x000016          0x2
  .ivt._T1Interrupt
-                  0x000016          0x2 build/default/production/dspic33_time.o
+                  0x000016          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
 
 .ivt._CCT1Interrupt
                   0x000022          0x2
  .ivt._CCT1Interrupt
-                  0x000022          0x2 build/default/production/dspic33_time.o
+                  0x000022          0x2 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
 
-.text             0x000378        0x25a
- .text            0x000378         0xfe build/default/production/dspic33_time.o
-                  0x000378                  _TIMER1_Initialize
-                  0x000398                  _TIMER1_Start
-                  0x0003a4                  _TIMER1_Stop
-                  0x0003ae                  _TIMER1_CountReset
-                  0x0003b8                  _delay_ms
-                  0x0003dc                  _delay_5us
-                  0x0003f0                  _SCCP1_Initialize
-                  0x000432                  _SCCP1_Start
-                  0x000452                  _SCCP1_Stop
-                  0x00045a                  _milliseconds
-                  0x000468                  _seconds
- .text            0x000476         0xbe build/default/production/main.o
-                  0x000476                  _main
- .text            0x000534         0x9e build/default/production/dspic33_sys.o
-                  0x000534                  _SYS_INIT
-                  0x000544                  _GPIO_Initialize
-                  0x000566                  _SYSCLOCK_Initialize
+.text             0x0006f4       0x129c
+ .text            0x0006f4        0x930 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_analog.o
+                  0x000704                  _SCCP2_Initialize
+                  0x00073e                  _SCCP2_Start
+                  0x000750                  _SCCP2_Stop
+                  0x000758                  _SCCP2_SetSamplingPeriod
+                  0x000770                  _SCCP2_Triggered
+                  0x000784                  _ADC1_Initialize
+                  0x0007f2                  _ADC1_Core0PowerEnable
+                  0x000808                  _ADC1_Core0PowerDisable
+                  0x000812                  _ADC1_Core1PowerEnable
+                  0x000828                  _ADC1_Core1PowerDisable
+                  0x000832                  _ADC1_SharedCorePowerEnable
+                  0x000848                  _ADC1_SharedCorePowerDisable
+                  0x000852                  _ADC1_GetConversionResult
+                  0x0008cc                  _ADC1_IsConversionComplete
+                  0x000a06                  _ADC1_SetChannelInterrupt
+                  0x000b3c                  _Analog_SetPin
+                  0x000d18                  _ADC1_Read
+                  0x000fc6                  _CMP1_Initialize
+                  0x000fec                  _CMP1_Enable
+                  0x000ff4                  _CMP1_Disable
+                  0x000ffc                  _DAC_SetValue
+                  0x001008                  _CMP1_EnableDACOutput
+                  0x001010                  _CMP1_DisableDACOutput
+                  0x001018                  _DAC_Enable
+ .text            0x001024        0x6de build/default/production/dspic33ck_lib_mttarvina/dspic33ck_core.o
+                  0x001024                  _SYS_INIT
+                  0x001034                  _SYSCLOCK_Initialize
+                  0x0010a0                  _GPIO_Initialize
+                  0x0010c6                  _Digital_SetPin
+                  0x001352                  _Digital_DrvPin
+                  0x001512                  _Digital_ReadPin
+ .text            0x001702        0x160 build/default/production/dspic33ck_lib_mttarvina/dspic33ck_pwm.o
+                  0x001702                  _PWMx_GetPinRegister
+                  0x0017a2                  _PWMA_Attach
+                  0x00182a                  _PWMA_Start
+                  0x001832                  _PWMA_Stop
+                  0x00183a                  _PWMA_SetDuty
+ .text            0x001862         0xea build/default/production/dspic33ck_lib_mttarvina/dspic33ck_time.o
+                  0x001862                  _TIMER1_Initialize
+                  0x00187e                  _TIMER1_Start
+                  0x00188c                  _TIMER1_Stop
+                  0x001896                  _TIMER1_CountReset
+                  0x0018a0                  _delay_ms
+                  0x0018c0                  _SCCP1_Initialize
+                  0x0018fc                  _SCCP1_Start
+                  0x00190e                  _SCCP1_Stop
+                  0x001916                  _SCCP1_CountReset
+                  0x001934                  _milliseconds
+                  0x001940                  _seconds
+ .text            0x00194c         0x44 build/default/production/main.o
+                  0x00194c                  _main
 
-.dinit            0x0005d2         0x14
- .dinit           0x0005d2         0x14 data_init
+.dinit            0x001990         0x26
+ .dinit           0x001990         0x26 data_init

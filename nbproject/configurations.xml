@@ -4,8 +4,14 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>dspic33_sys.h</itemPath>
-      <itemPath>dspic33_time.h</itemPath>
+      <logicalFolder name="dspic33ck_lib_mttarvina"
+                     displayName="dspic33ck_lib_mttarvina"
+                     projectFiles="true">
+        <itemPath>dspic33ck_lib_mttarvina/dspic33ck_analog.h</itemPath>
+        <itemPath>dspic33ck_lib_mttarvina/dspic33ck_core.h</itemPath>
+        <itemPath>dspic33ck_lib_mttarvina/dspic33ck_pwm.h</itemPath>
+        <itemPath>dspic33ck_lib_mttarvina/dspic33ck_time.h</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -14,9 +20,15 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="dspic33ck_lib_mttarvina"
+                     displayName="dspic33ck_lib_mttarvina"
+                     projectFiles="true">
+        <itemPath>dspic33ck_lib_mttarvina/dspic33ck_analog.c</itemPath>
+        <itemPath>dspic33ck_lib_mttarvina/dspic33ck_core.c</itemPath>
+        <itemPath>dspic33ck_lib_mttarvina/dspic33ck_pwm.c</itemPath>
+        <itemPath>dspic33ck_lib_mttarvina/dspic33ck_time.c</itemPath>
+      </logicalFolder>
       <itemPath>main.c</itemPath>
-      <itemPath>dspic33_sys.c</itemPath>
-      <itemPath>dspic33_time.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -24,6 +36,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
@@ -254,7 +269,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-2beff"/>
-        <property key="poweroptions.powerenable" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
         <property key="programmertogo.imagename" value=""/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/production/TemplateProject.X.production.elf">
+  <executable name="dist/default/production/dsPIC33CK_Template.X.production.elf">
     <memory name="data">
       <units>bytes</units>
       <length>24576</length>
-      <used>38</used>
-      <free>24538</free>
+      <used>48</used>
+      <free>24528</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>269184</length>
-      <used>1497</used>
-      <free>267687</free>
+      <used>9105</used>
+      <free>260079</free>
     </memory>
   </executable>
 </project>
